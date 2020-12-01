@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+"use strict";
 /*
 NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -53,38 +53,8 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMNMMMNMMNNMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 */
-// Server config
-export interface CreateConfig {
-  folderNameToken?: string;
-  mkdirFolderToken?: string;
-  headless?: boolean;
-  devtools?: boolean;
-  useChrome?: boolean;
-  debug?: boolean;
-  browserWS?: string;
-  browserArgs?: string[];
-  puppeteerOptions: { [key: string]: string };
-  logQR?: boolean;
-  disableSpins?: boolean;
-  disableWelcome?: boolean;
-  updatesLog?: boolean;
-  autoClose?: number;
-  createPathFileToken: boolean;
-}
-export const defaultOptions: CreateConfig = {
-  folderNameToken: 'tokens',
-  mkdirFolderToken: '',
-  headless: true,
-  devtools: false,
-  useChrome: true,
-  debug: false,
-  logQR: true,
-  browserWS: '',
-  browserArgs: null,
-  puppeteerOptions: {},
-  disableSpins: false,
-  disableWelcome: false,
-  updatesLog: true,
-  autoClose: 60000,
-  createPathFileToken: false,
-};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useragentOverride = void 0;
+var useragentOverride = 'WhatsApp/2.2043.8 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36';
+exports.useragentOverride = useragentOverride;
+//# sourceMappingURL=WAuserAgente.js.map

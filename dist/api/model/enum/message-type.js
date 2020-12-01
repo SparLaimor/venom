@@ -1,4 +1,6 @@
-/* eslint-disable prettier/prettier */
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MediaType = exports.MessageType = void 0;
 /*
 NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -53,38 +55,28 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMNMMMNMMNNMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 */
-// Server config
-export interface CreateConfig {
-  folderNameToken?: string;
-  mkdirFolderToken?: string;
-  headless?: boolean;
-  devtools?: boolean;
-  useChrome?: boolean;
-  debug?: boolean;
-  browserWS?: string;
-  browserArgs?: string[];
-  puppeteerOptions: { [key: string]: string };
-  logQR?: boolean;
-  disableSpins?: boolean;
-  disableWelcome?: boolean;
-  updatesLog?: boolean;
-  autoClose?: number;
-  createPathFileToken: boolean;
-}
-export const defaultOptions: CreateConfig = {
-  folderNameToken: 'tokens',
-  mkdirFolderToken: '',
-  headless: true,
-  devtools: false,
-  useChrome: true,
-  debug: false,
-  logQR: true,
-  browserWS: '',
-  browserArgs: null,
-  puppeteerOptions: {},
-  disableSpins: false,
-  disableWelcome: false,
-  updatesLog: true,
-  autoClose: 60000,
-  createPathFileToken: false,
-};
+var MessageType;
+(function (MessageType) {
+    MessageType["TEXT"] = "chat";
+    MessageType["AUDIO"] = "audio";
+    MessageType["VOICE"] = "ptt";
+    MessageType["IMAGE"] = "image";
+    MessageType["VIDEO"] = "video";
+    MessageType["DOCUMENT"] = "document";
+    MessageType["STICKER"] = "sticker";
+    MessageType["LOCATION"] = "location";
+    MessageType["CONTACT_CARD"] = "vcard";
+    MessageType["CONTACT_CARD_MULTI"] = "multi_vcard";
+    MessageType["REVOKED"] = "revoked";
+    MessageType["UNKNOWN"] = "unknown";
+})(MessageType = exports.MessageType || (exports.MessageType = {}));
+var MediaType;
+(function (MediaType) {
+    MediaType["IMAGE"] = "Image";
+    MediaType["VIDEO"] = "Video";
+    MediaType["AUDIO"] = "Audio";
+    MediaType["PTT"] = "Audio";
+    MediaType["DOCUMENT"] = "Document";
+    MediaType["STICKER"] = "Image";
+})(MediaType = exports.MediaType || (exports.MediaType = {}));
+//# sourceMappingURL=message-type.js.map

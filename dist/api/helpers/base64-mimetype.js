@@ -1,4 +1,6 @@
-/* eslint-disable prettier/prettier */
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.base64MimeType = void 0;
 /*
 NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -53,38 +55,16 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMNMMMNMMNNMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 */
-// Server config
-export interface CreateConfig {
-  folderNameToken?: string;
-  mkdirFolderToken?: string;
-  headless?: boolean;
-  devtools?: boolean;
-  useChrome?: boolean;
-  debug?: boolean;
-  browserWS?: string;
-  browserArgs?: string[];
-  puppeteerOptions: { [key: string]: string };
-  logQR?: boolean;
-  disableSpins?: boolean;
-  disableWelcome?: boolean;
-  updatesLog?: boolean;
-  autoClose?: number;
-  createPathFileToken: boolean;
+function base64MimeType(encoded) {
+    var result = null;
+    if (typeof encoded !== 'string') {
+        return result;
+    }
+    var mime = encoded.match(/data:([a-zA-Z0-9]+\/[a-zA-Z0-9-.+]+).*,.*/);
+    if (mime && mime.length) {
+        result = mime[1];
+    }
+    return result;
 }
-export const defaultOptions: CreateConfig = {
-  folderNameToken: 'tokens',
-  mkdirFolderToken: '',
-  headless: true,
-  devtools: false,
-  useChrome: true,
-  debug: false,
-  logQR: true,
-  browserWS: '',
-  browserArgs: null,
-  puppeteerOptions: {},
-  disableSpins: false,
-  disableWelcome: false,
-  updatesLog: true,
-  autoClose: 60000,
-  createPathFileToken: false,
-};
+exports.base64MimeType = base64MimeType;
+//# sourceMappingURL=base64-mimetype.js.map

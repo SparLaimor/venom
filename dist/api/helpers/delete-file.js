@@ -1,4 +1,6 @@
-/* eslint-disable prettier/prettier */
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.deleteFiles = void 0;
 /*
 NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -53,38 +55,27 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMNMMMNMMNNMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 */
-// Server config
-export interface CreateConfig {
-  folderNameToken?: string;
-  mkdirFolderToken?: string;
-  headless?: boolean;
-  devtools?: boolean;
-  useChrome?: boolean;
-  debug?: boolean;
-  browserWS?: string;
-  browserArgs?: string[];
-  puppeteerOptions: { [key: string]: string };
-  logQR?: boolean;
-  disableSpins?: boolean;
-  disableWelcome?: boolean;
-  updatesLog?: boolean;
-  autoClose?: number;
-  createPathFileToken: boolean;
+var path = require("path");
+var fs_1 = require("fs");
+function deleteFiles(mergedOptions, Session, spinnies) {
+    spinnies.add("removeFile", { text: '....' });
+    var pathTokens = path.join(path.resolve(process.cwd() + mergedOptions.mkdirFolderToken, mergedOptions.folderNameToken), Session + ".data.json");
+    if (fs_1.existsSync(pathTokens)) {
+        try {
+            fs_1.unlinkSync(pathTokens);
+            spinnies.succeed("removeFile", {
+                text: "Removed file: " + pathTokens,
+            });
+        }
+        catch (err) {
+            spinnies.fail("removeFile", {
+                text: "Not removed file: " + pathTokens,
+            });
+        }
+    }
+    else {
+        spinnies.fail("removeFile", { text: "Not Files: " + pathTokens });
+    }
 }
-export const defaultOptions: CreateConfig = {
-  folderNameToken: 'tokens',
-  mkdirFolderToken: '',
-  headless: true,
-  devtools: false,
-  useChrome: true,
-  debug: false,
-  logQR: true,
-  browserWS: '',
-  browserArgs: null,
-  puppeteerOptions: {},
-  disableSpins: false,
-  disableWelcome: false,
-  updatesLog: true,
-  autoClose: 60000,
-  createPathFileToken: false,
-};
+exports.deleteFiles = deleteFiles;
+//# sourceMappingURL=delete-file.js.map

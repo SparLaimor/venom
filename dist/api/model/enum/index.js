@@ -1,4 +1,6 @@
-/* eslint-disable prettier/prettier */
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MediaType = exports.MessageType = exports.SocketState = exports.GroupNotificationType = exports.GroupChangeEvent = exports.ChatState = exports.AckType = void 0;
 /*
 NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -53,38 +55,17 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMNMMMNMMNNMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 */
-// Server config
-export interface CreateConfig {
-  folderNameToken?: string;
-  mkdirFolderToken?: string;
-  headless?: boolean;
-  devtools?: boolean;
-  useChrome?: boolean;
-  debug?: boolean;
-  browserWS?: string;
-  browserArgs?: string[];
-  puppeteerOptions: { [key: string]: string };
-  logQR?: boolean;
-  disableSpins?: boolean;
-  disableWelcome?: boolean;
-  updatesLog?: boolean;
-  autoClose?: number;
-  createPathFileToken: boolean;
-}
-export const defaultOptions: CreateConfig = {
-  folderNameToken: 'tokens',
-  mkdirFolderToken: '',
-  headless: true,
-  devtools: false,
-  useChrome: true,
-  debug: false,
-  logQR: true,
-  browserWS: '',
-  browserArgs: null,
-  puppeteerOptions: {},
-  disableSpins: false,
-  disableWelcome: false,
-  updatesLog: true,
-  autoClose: 60000,
-  createPathFileToken: false,
-};
+var ack_type_1 = require("./ack-type");
+Object.defineProperty(exports, "AckType", { enumerable: true, get: function () { return ack_type_1.AckType; } });
+var chat_state_1 = require("./chat-state");
+Object.defineProperty(exports, "ChatState", { enumerable: true, get: function () { return chat_state_1.ChatState; } });
+var group_change_event_1 = require("./group-change-event");
+Object.defineProperty(exports, "GroupChangeEvent", { enumerable: true, get: function () { return group_change_event_1.GroupChangeEvent; } });
+var group_notification_type_1 = require("./group-notification-type");
+Object.defineProperty(exports, "GroupNotificationType", { enumerable: true, get: function () { return group_notification_type_1.GroupNotificationType; } });
+var socket_state_1 = require("./socket-state");
+Object.defineProperty(exports, "SocketState", { enumerable: true, get: function () { return socket_state_1.SocketState; } });
+var message_type_1 = require("./message-type");
+Object.defineProperty(exports, "MessageType", { enumerable: true, get: function () { return message_type_1.MessageType; } });
+Object.defineProperty(exports, "MediaType", { enumerable: true, get: function () { return message_type_1.MediaType; } });
+//# sourceMappingURL=index.js.map

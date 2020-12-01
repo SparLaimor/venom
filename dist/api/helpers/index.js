@@ -1,4 +1,6 @@
-/* eslint-disable prettier/prettier */
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.deleteFiles = exports.scrapeDeleteToken = exports.scrapeDesconnected = exports.scrapeLogin = exports.scrapeImg = exports.resizeImg = exports.stickerSelect = exports.MINES = exports.downloadFileToBase64 = exports.base64MimeType = exports.fileToBase64 = void 0;
 /*
 NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -53,38 +55,24 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMNMMMNMMNNMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 */
-// Server config
-export interface CreateConfig {
-  folderNameToken?: string;
-  mkdirFolderToken?: string;
-  headless?: boolean;
-  devtools?: boolean;
-  useChrome?: boolean;
-  debug?: boolean;
-  browserWS?: string;
-  browserArgs?: string[];
-  puppeteerOptions: { [key: string]: string };
-  logQR?: boolean;
-  disableSpins?: boolean;
-  disableWelcome?: boolean;
-  updatesLog?: boolean;
-  autoClose?: number;
-  createPathFileToken: boolean;
-}
-export const defaultOptions: CreateConfig = {
-  folderNameToken: 'tokens',
-  mkdirFolderToken: '',
-  headless: true,
-  devtools: false,
-  useChrome: true,
-  debug: false,
-  logQR: true,
-  browserWS: '',
-  browserArgs: null,
-  puppeteerOptions: {},
-  disableSpins: false,
-  disableWelcome: false,
-  updatesLog: true,
-  autoClose: 60000,
-  createPathFileToken: false,
-};
+var file_to_base64_1 = require("./file-to-base64");
+Object.defineProperty(exports, "fileToBase64", { enumerable: true, get: function () { return file_to_base64_1.fileToBase64; } });
+var base64_mimetype_1 = require("./base64-mimetype");
+Object.defineProperty(exports, "base64MimeType", { enumerable: true, get: function () { return base64_mimetype_1.base64MimeType; } });
+var download_file_1 = require("./download-file");
+Object.defineProperty(exports, "downloadFileToBase64", { enumerable: true, get: function () { return download_file_1.downloadFileToBase64; } });
+Object.defineProperty(exports, "MINES", { enumerable: true, get: function () { return download_file_1.MINES; } });
+var select_sticker_1 = require("./select-sticker");
+Object.defineProperty(exports, "stickerSelect", { enumerable: true, get: function () { return select_sticker_1.stickerSelect; } });
+Object.defineProperty(exports, "resizeImg", { enumerable: true, get: function () { return select_sticker_1.resizeImg; } });
+var scrape_img_qr_1 = require("./scrape-img-qr");
+Object.defineProperty(exports, "scrapeImg", { enumerable: true, get: function () { return scrape_img_qr_1.scrapeImg; } });
+var scrape_login_1 = require("./scrape-login");
+Object.defineProperty(exports, "scrapeLogin", { enumerable: true, get: function () { return scrape_login_1.scrapeLogin; } });
+var scrape_desconnect_1 = require("./scrape-desconnect");
+Object.defineProperty(exports, "scrapeDesconnected", { enumerable: true, get: function () { return scrape_desconnect_1.scrapeDesconnected; } });
+var scrape_deletetoken_1 = require("./scrape-deletetoken");
+Object.defineProperty(exports, "scrapeDeleteToken", { enumerable: true, get: function () { return scrape_deletetoken_1.scrapeDeleteToken; } });
+var delete_file_1 = require("./delete-file");
+Object.defineProperty(exports, "deleteFiles", { enumerable: true, get: function () { return delete_file_1.deleteFiles; } });
+//# sourceMappingURL=index.js.map

@@ -1,4 +1,6 @@
-/* eslint-disable prettier/prettier */
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.puppeteerConfig = void 0;
 /*
 NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -53,38 +55,45 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMNMMMNMMNNMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 */
-// Server config
-export interface CreateConfig {
-  folderNameToken?: string;
-  mkdirFolderToken?: string;
-  headless?: boolean;
-  devtools?: boolean;
-  useChrome?: boolean;
-  debug?: boolean;
-  browserWS?: string;
-  browserArgs?: string[];
-  puppeteerOptions: { [key: string]: string };
-  logQR?: boolean;
-  disableSpins?: boolean;
-  disableWelcome?: boolean;
-  updatesLog?: boolean;
-  autoClose?: number;
-  createPathFileToken: boolean;
-}
-export const defaultOptions: CreateConfig = {
-  folderNameToken: 'tokens',
-  mkdirFolderToken: '',
-  headless: true,
-  devtools: false,
-  useChrome: true,
-  debug: false,
-  logQR: true,
-  browserWS: '',
-  browserArgs: null,
-  puppeteerOptions: {},
-  disableSpins: false,
-  disableWelcome: false,
-  updatesLog: true,
-  autoClose: 60000,
-  createPathFileToken: false,
+var puppeteerConfig = {
+    whatsappUrl: 'https://web.whatsapp.com',
+    chromiumArgs: [
+        // `--app=${WAUrl}`,
+        '--log-level=3',
+        //'--start-maximized',
+        '--no-default-browser-check',
+        '--disable-site-isolation-trials',
+        '--no-experiments',
+        '--ignore-gpu-blacklist',
+        '--ignore-certificate-errors',
+        '--ignore-certificate-errors-spki-list',
+        '--disable-gpu',
+        '--disable-extensions',
+        '--disable-default-apps',
+        '--enable-features=NetworkService',
+        '--disable-setuid-sandbox',
+        '--no-sandbox',
+        // Extras
+        '--disable-webgl',
+        '--disable-infobars',
+        '--window-position=0,0',
+        '--ignore-certifcate-errors',
+        '--ignore-certifcate-errors-spki-list',
+        '--disable-threaded-animation',
+        '--disable-threaded-scrolling',
+        '--disable-in-process-stack-traces',
+        '--disable-histogram-customizer',
+        '--disable-gl-extensions',
+        '--disable-composited-antialiasing',
+        '--disable-canvas-aa',
+        '--disable-3d-apis',
+        '--disable-accelerated-2d-canvas',
+        '--disable-accelerated-jpeg-decoding',
+        '--disable-accelerated-mjpeg-decode',
+        '--disable-app-list-dismiss-on-blur',
+        '--disable-accelerated-video-decode',
+        '--disable-dev-shm-usage',
+    ],
 };
+exports.puppeteerConfig = puppeteerConfig;
+//# sourceMappingURL=puppeteer.config.js.map

@@ -1,4 +1,6 @@
-/* eslint-disable prettier/prettier */
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AckType = void 0;
 /*
 NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -53,38 +55,19 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMNMMMNMMNNMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 */
-// Server config
-export interface CreateConfig {
-  folderNameToken?: string;
-  mkdirFolderToken?: string;
-  headless?: boolean;
-  devtools?: boolean;
-  useChrome?: boolean;
-  debug?: boolean;
-  browserWS?: string;
-  browserArgs?: string[];
-  puppeteerOptions: { [key: string]: string };
-  logQR?: boolean;
-  disableSpins?: boolean;
-  disableWelcome?: boolean;
-  updatesLog?: boolean;
-  autoClose?: number;
-  createPathFileToken: boolean;
-}
-export const defaultOptions: CreateConfig = {
-  folderNameToken: 'tokens',
-  mkdirFolderToken: '',
-  headless: true,
-  devtools: false,
-  useChrome: true,
-  debug: false,
-  logQR: true,
-  browserWS: '',
-  browserArgs: null,
-  puppeteerOptions: {},
-  disableSpins: false,
-  disableWelcome: false,
-  updatesLog: true,
-  autoClose: 60000,
-  createPathFileToken: false,
-};
+var AckType;
+(function (AckType) {
+    AckType[AckType["MD_DOWNGRADE"] = -7] = "MD_DOWNGRADE";
+    AckType[AckType["INACTIVE"] = -6] = "INACTIVE";
+    AckType[AckType["CONTENT_UNUPLOADABLE"] = -5] = "CONTENT_UNUPLOADABLE";
+    AckType[AckType["CONTENT_TOO_BIG"] = -4] = "CONTENT_TOO_BIG";
+    AckType[AckType["CONTENT_GONE"] = -3] = "CONTENT_GONE";
+    AckType[AckType["EXPIRED"] = -2] = "EXPIRED";
+    AckType[AckType["FAILED"] = -1] = "FAILED";
+    AckType[AckType["CLOCK"] = 0] = "CLOCK";
+    AckType[AckType["SENT"] = 1] = "SENT";
+    AckType[AckType["RECEIVED"] = 2] = "RECEIVED";
+    AckType[AckType["READ"] = 3] = "READ";
+    AckType[AckType["PLAYED"] = 4] = "PLAYED";
+})(AckType = exports.AckType || (exports.AckType = {}));
+//# sourceMappingURL=ack-type.js.map
