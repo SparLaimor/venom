@@ -234,7 +234,8 @@ function initBrowser(session, options, extras) {
                         .then(function (e) {
                         browser = e;
                     })
-                        .catch(function () {
+                        .catch(function (e) {
+                        console.error(e);
                         browser = 'launch';
                     })];
                 case 5:

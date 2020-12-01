@@ -169,7 +169,8 @@ export async function initBrowser(
       .then((e) => {
         browser = e;
       })
-      .catch(() => {
+      .catch((e) => {
+        console.error(e);
         browser = 'launch';
       });
   }
