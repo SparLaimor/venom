@@ -1,4 +1,6 @@
-/* eslint-disable prettier/prettier */
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.deleteFiles = exports.scrapeDeleteToken = exports.scrapeDesconnected = exports.scrapeLogin = exports.scrapeImg = exports.resizeImg = exports.stickerSelect = exports.MINES = exports.downloadFileToBase64 = exports.base64MimeType = exports.fileToBase64 = void 0;
 /*
 NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -53,99 +55,24 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMNMMMNMMNNMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 */
-// Server config
-export interface CreateConfig {
-  /** folder name when saving tokens
-   * @default 'tokens'
-   */
-  folderNameToken?: string;
-  /**
-   * folder directory tokens, just inside the venom folder, example:  { mkdirFolderToken: '/node_modules', } //will save the tokens folder in the node_modules directory
-   */
-  mkdirFolderToken?: string;
-  /**
-   * Headless chrome
-   * @default true
-   */
-  headless?: boolean;
-  /**
-   * Open devtools by default
-   * @default false
-   */
-  devtools?: boolean;
-  /**
-   * If false will use Chromium instance
-   * @default true
-   */
-  useChrome?: boolean;
-  /**
-   * Opens a debug session
-   * @default false
-   */
-  debug?: boolean;
-  /**
-   * If you want to use browserWSEndpoint
-   */
-  browserWS?: string;
-  /**
-   * Parameters to be added into the chrome browser instance
-   */
-  browserArgs?: string[];
-  /**
-   * Will be passed to puppeteer.launch
-   */
-  puppeteerOptions?: { [key: string]: string };
-  /**
-   * Logs QR automatically in terminal
-   * @default true
-   */
-  logQR?: boolean;
-  /**
-   * Will disable Spinnies animation, useful for containers (docker) for a better log
-   * @default false
-   */
-  disableSpins?: boolean;
-  /**
-   * Will disable the welcoming message which appears in the beginning
-   * @default false
-   */
-  disableWelcome?: boolean;
-  /**
-   * Logs info updates automatically in terminal
-   * @default true
-   */
-  updatesLog?: boolean;
-  /**
-   * Automatically closes the venom-bot only when scanning the QR code (default 60000 miliseconds, if you want to turn it off, assign 0 or false)
-   * @default 60000
-   */
-  autoClose?: number;
-  /**
-   * Creates a folder when inserting an object in the client's browser, to work it is necessary to pass the parameters in the function create browserSessionToken
-   * @default true
-   */
-  createPathFileToken?: boolean;
-  /**
-   * Wait for in chat to return a instance of {@link Whatsapp}
-   * @default false
-   */
-  waitForLogin?: boolean;
-}
-export const defaultOptions: CreateConfig = {
-  folderNameToken: 'tokens',
-  mkdirFolderToken: '',
-  headless: true,
-  devtools: false,
-  useChrome: true,
-  debug: false,
-  logQR: true,
-  browserWS: '',
-  browserArgs: null,
-  puppeteerOptions: {},
-  disableSpins: false,
-  disableWelcome: false,
-  updatesLog: true,
-  autoClose: 60000,
-  createPathFileToken: true,
-  waitForLogin: true,
-};
+var file_to_base64_1 = require("./file-to-base64");
+Object.defineProperty(exports, "fileToBase64", { enumerable: true, get: function () { return file_to_base64_1.fileToBase64; } });
+var base64_mimetype_1 = require("./base64-mimetype");
+Object.defineProperty(exports, "base64MimeType", { enumerable: true, get: function () { return base64_mimetype_1.base64MimeType; } });
+var download_file_1 = require("./download-file");
+Object.defineProperty(exports, "downloadFileToBase64", { enumerable: true, get: function () { return download_file_1.downloadFileToBase64; } });
+Object.defineProperty(exports, "MINES", { enumerable: true, get: function () { return download_file_1.MINES; } });
+var select_sticker_1 = require("./select-sticker");
+Object.defineProperty(exports, "stickerSelect", { enumerable: true, get: function () { return select_sticker_1.stickerSelect; } });
+Object.defineProperty(exports, "resizeImg", { enumerable: true, get: function () { return select_sticker_1.resizeImg; } });
+var scrape_img_qr_1 = require("./scrape-img-qr");
+Object.defineProperty(exports, "scrapeImg", { enumerable: true, get: function () { return scrape_img_qr_1.scrapeImg; } });
+var scrape_login_1 = require("./scrape-login");
+Object.defineProperty(exports, "scrapeLogin", { enumerable: true, get: function () { return scrape_login_1.scrapeLogin; } });
+var scrape_desconnect_1 = require("./scrape-desconnect");
+Object.defineProperty(exports, "scrapeDesconnected", { enumerable: true, get: function () { return scrape_desconnect_1.scrapeDesconnected; } });
+var scrape_deletetoken_1 = require("./scrape-deletetoken");
+Object.defineProperty(exports, "scrapeDeleteToken", { enumerable: true, get: function () { return scrape_deletetoken_1.scrapeDeleteToken; } });
+var delete_file_1 = require("./delete-file");
+Object.defineProperty(exports, "deleteFiles", { enumerable: true, get: function () { return delete_file_1.deleteFiles; } });
+//# sourceMappingURL=index.js.map

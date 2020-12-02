@@ -1,4 +1,6 @@
-/* eslint-disable prettier/prettier */
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.puppeteerConfig = void 0;
 /*
 NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -53,99 +55,45 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMNMMMNMMNNMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 */
-// Server config
-export interface CreateConfig {
-  /** folder name when saving tokens
-   * @default 'tokens'
-   */
-  folderNameToken?: string;
-  /**
-   * folder directory tokens, just inside the venom folder, example:  { mkdirFolderToken: '/node_modules', } //will save the tokens folder in the node_modules directory
-   */
-  mkdirFolderToken?: string;
-  /**
-   * Headless chrome
-   * @default true
-   */
-  headless?: boolean;
-  /**
-   * Open devtools by default
-   * @default false
-   */
-  devtools?: boolean;
-  /**
-   * If false will use Chromium instance
-   * @default true
-   */
-  useChrome?: boolean;
-  /**
-   * Opens a debug session
-   * @default false
-   */
-  debug?: boolean;
-  /**
-   * If you want to use browserWSEndpoint
-   */
-  browserWS?: string;
-  /**
-   * Parameters to be added into the chrome browser instance
-   */
-  browserArgs?: string[];
-  /**
-   * Will be passed to puppeteer.launch
-   */
-  puppeteerOptions?: { [key: string]: string };
-  /**
-   * Logs QR automatically in terminal
-   * @default true
-   */
-  logQR?: boolean;
-  /**
-   * Will disable Spinnies animation, useful for containers (docker) for a better log
-   * @default false
-   */
-  disableSpins?: boolean;
-  /**
-   * Will disable the welcoming message which appears in the beginning
-   * @default false
-   */
-  disableWelcome?: boolean;
-  /**
-   * Logs info updates automatically in terminal
-   * @default true
-   */
-  updatesLog?: boolean;
-  /**
-   * Automatically closes the venom-bot only when scanning the QR code (default 60000 miliseconds, if you want to turn it off, assign 0 or false)
-   * @default 60000
-   */
-  autoClose?: number;
-  /**
-   * Creates a folder when inserting an object in the client's browser, to work it is necessary to pass the parameters in the function create browserSessionToken
-   * @default true
-   */
-  createPathFileToken?: boolean;
-  /**
-   * Wait for in chat to return a instance of {@link Whatsapp}
-   * @default false
-   */
-  waitForLogin?: boolean;
-}
-export const defaultOptions: CreateConfig = {
-  folderNameToken: 'tokens',
-  mkdirFolderToken: '',
-  headless: true,
-  devtools: false,
-  useChrome: true,
-  debug: false,
-  logQR: true,
-  browserWS: '',
-  browserArgs: null,
-  puppeteerOptions: {},
-  disableSpins: false,
-  disableWelcome: false,
-  updatesLog: true,
-  autoClose: 60000,
-  createPathFileToken: true,
-  waitForLogin: true,
+var puppeteerConfig = {
+    whatsappUrl: 'https://web.whatsapp.com',
+    chromiumArgs: [
+        // `--app=${WAUrl}`,
+        '--log-level=3',
+        //'--start-maximized',
+        '--no-default-browser-check',
+        '--disable-site-isolation-trials',
+        '--no-experiments',
+        '--ignore-gpu-blacklist',
+        '--ignore-certificate-errors',
+        '--ignore-certificate-errors-spki-list',
+        '--disable-gpu',
+        '--disable-extensions',
+        '--disable-default-apps',
+        '--enable-features=NetworkService',
+        '--disable-setuid-sandbox',
+        '--no-sandbox',
+        // Extras
+        '--disable-webgl',
+        '--disable-infobars',
+        '--window-position=0,0',
+        '--ignore-certifcate-errors',
+        '--ignore-certifcate-errors-spki-list',
+        '--disable-threaded-animation',
+        '--disable-threaded-scrolling',
+        '--disable-in-process-stack-traces',
+        '--disable-histogram-customizer',
+        '--disable-gl-extensions',
+        '--disable-composited-antialiasing',
+        '--disable-canvas-aa',
+        '--disable-3d-apis',
+        '--disable-accelerated-2d-canvas',
+        '--disable-accelerated-jpeg-decoding',
+        '--disable-accelerated-mjpeg-decode',
+        '--disable-app-list-dismiss-on-blur',
+        '--disable-accelerated-video-decode',
+        '--disable-dev-shm-usage',
+    ],
 };
+exports.puppeteerConfig = puppeteerConfig;
+//# sourceMappingURL=puppeteer.config.js.map

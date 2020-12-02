@@ -1,4 +1,6 @@
-/* eslint-disable prettier/prettier */
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AckType = void 0;
 /*
 NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -53,99 +55,19 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMNMMMNMMNNMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 */
-// Server config
-export interface CreateConfig {
-  /** folder name when saving tokens
-   * @default 'tokens'
-   */
-  folderNameToken?: string;
-  /**
-   * folder directory tokens, just inside the venom folder, example:  { mkdirFolderToken: '/node_modules', } //will save the tokens folder in the node_modules directory
-   */
-  mkdirFolderToken?: string;
-  /**
-   * Headless chrome
-   * @default true
-   */
-  headless?: boolean;
-  /**
-   * Open devtools by default
-   * @default false
-   */
-  devtools?: boolean;
-  /**
-   * If false will use Chromium instance
-   * @default true
-   */
-  useChrome?: boolean;
-  /**
-   * Opens a debug session
-   * @default false
-   */
-  debug?: boolean;
-  /**
-   * If you want to use browserWSEndpoint
-   */
-  browserWS?: string;
-  /**
-   * Parameters to be added into the chrome browser instance
-   */
-  browserArgs?: string[];
-  /**
-   * Will be passed to puppeteer.launch
-   */
-  puppeteerOptions?: { [key: string]: string };
-  /**
-   * Logs QR automatically in terminal
-   * @default true
-   */
-  logQR?: boolean;
-  /**
-   * Will disable Spinnies animation, useful for containers (docker) for a better log
-   * @default false
-   */
-  disableSpins?: boolean;
-  /**
-   * Will disable the welcoming message which appears in the beginning
-   * @default false
-   */
-  disableWelcome?: boolean;
-  /**
-   * Logs info updates automatically in terminal
-   * @default true
-   */
-  updatesLog?: boolean;
-  /**
-   * Automatically closes the venom-bot only when scanning the QR code (default 60000 miliseconds, if you want to turn it off, assign 0 or false)
-   * @default 60000
-   */
-  autoClose?: number;
-  /**
-   * Creates a folder when inserting an object in the client's browser, to work it is necessary to pass the parameters in the function create browserSessionToken
-   * @default true
-   */
-  createPathFileToken?: boolean;
-  /**
-   * Wait for in chat to return a instance of {@link Whatsapp}
-   * @default false
-   */
-  waitForLogin?: boolean;
-}
-export const defaultOptions: CreateConfig = {
-  folderNameToken: 'tokens',
-  mkdirFolderToken: '',
-  headless: true,
-  devtools: false,
-  useChrome: true,
-  debug: false,
-  logQR: true,
-  browserWS: '',
-  browserArgs: null,
-  puppeteerOptions: {},
-  disableSpins: false,
-  disableWelcome: false,
-  updatesLog: true,
-  autoClose: 60000,
-  createPathFileToken: true,
-  waitForLogin: true,
-};
+var AckType;
+(function (AckType) {
+    AckType[AckType["MD_DOWNGRADE"] = -7] = "MD_DOWNGRADE";
+    AckType[AckType["INACTIVE"] = -6] = "INACTIVE";
+    AckType[AckType["CONTENT_UNUPLOADABLE"] = -5] = "CONTENT_UNUPLOADABLE";
+    AckType[AckType["CONTENT_TOO_BIG"] = -4] = "CONTENT_TOO_BIG";
+    AckType[AckType["CONTENT_GONE"] = -3] = "CONTENT_GONE";
+    AckType[AckType["EXPIRED"] = -2] = "EXPIRED";
+    AckType[AckType["FAILED"] = -1] = "FAILED";
+    AckType[AckType["CLOCK"] = 0] = "CLOCK";
+    AckType[AckType["SENT"] = 1] = "SENT";
+    AckType[AckType["RECEIVED"] = 2] = "RECEIVED";
+    AckType[AckType["READ"] = 3] = "READ";
+    AckType[AckType["PLAYED"] = 4] = "PLAYED";
+})(AckType = exports.AckType || (exports.AckType = {}));
+//# sourceMappingURL=ack-type.js.map

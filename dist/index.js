@@ -1,4 +1,16 @@
-/* eslint-disable prettier/prettier */
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.create = exports.Whatsapp = exports.SocketState = exports.MessageType = exports.GroupNotificationType = exports.GroupChangeEvent = exports.ChatState = exports.AckType = void 0;
 /*
 NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -53,99 +65,16 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMNMNMMMNMMNNMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 */
-// Server config
-export interface CreateConfig {
-  /** folder name when saving tokens
-   * @default 'tokens'
-   */
-  folderNameToken?: string;
-  /**
-   * folder directory tokens, just inside the venom folder, example:  { mkdirFolderToken: '/node_modules', } //will save the tokens folder in the node_modules directory
-   */
-  mkdirFolderToken?: string;
-  /**
-   * Headless chrome
-   * @default true
-   */
-  headless?: boolean;
-  /**
-   * Open devtools by default
-   * @default false
-   */
-  devtools?: boolean;
-  /**
-   * If false will use Chromium instance
-   * @default true
-   */
-  useChrome?: boolean;
-  /**
-   * Opens a debug session
-   * @default false
-   */
-  debug?: boolean;
-  /**
-   * If you want to use browserWSEndpoint
-   */
-  browserWS?: string;
-  /**
-   * Parameters to be added into the chrome browser instance
-   */
-  browserArgs?: string[];
-  /**
-   * Will be passed to puppeteer.launch
-   */
-  puppeteerOptions?: { [key: string]: string };
-  /**
-   * Logs QR automatically in terminal
-   * @default true
-   */
-  logQR?: boolean;
-  /**
-   * Will disable Spinnies animation, useful for containers (docker) for a better log
-   * @default false
-   */
-  disableSpins?: boolean;
-  /**
-   * Will disable the welcoming message which appears in the beginning
-   * @default false
-   */
-  disableWelcome?: boolean;
-  /**
-   * Logs info updates automatically in terminal
-   * @default true
-   */
-  updatesLog?: boolean;
-  /**
-   * Automatically closes the venom-bot only when scanning the QR code (default 60000 miliseconds, if you want to turn it off, assign 0 or false)
-   * @default 60000
-   */
-  autoClose?: number;
-  /**
-   * Creates a folder when inserting an object in the client's browser, to work it is necessary to pass the parameters in the function create browserSessionToken
-   * @default true
-   */
-  createPathFileToken?: boolean;
-  /**
-   * Wait for in chat to return a instance of {@link Whatsapp}
-   * @default false
-   */
-  waitForLogin?: boolean;
-}
-export const defaultOptions: CreateConfig = {
-  folderNameToken: 'tokens',
-  mkdirFolderToken: '',
-  headless: true,
-  devtools: false,
-  useChrome: true,
-  debug: false,
-  logQR: true,
-  browserWS: '',
-  browserArgs: null,
-  puppeteerOptions: {},
-  disableSpins: false,
-  disableWelcome: false,
-  updatesLog: true,
-  autoClose: 60000,
-  createPathFileToken: true,
-  waitForLogin: true,
-};
+__exportStar(require("./api/model"), exports);
+var enum_1 = require("./api/model/enum");
+Object.defineProperty(exports, "AckType", { enumerable: true, get: function () { return enum_1.AckType; } });
+Object.defineProperty(exports, "ChatState", { enumerable: true, get: function () { return enum_1.ChatState; } });
+Object.defineProperty(exports, "GroupChangeEvent", { enumerable: true, get: function () { return enum_1.GroupChangeEvent; } });
+Object.defineProperty(exports, "GroupNotificationType", { enumerable: true, get: function () { return enum_1.GroupNotificationType; } });
+Object.defineProperty(exports, "MessageType", { enumerable: true, get: function () { return enum_1.MessageType; } });
+Object.defineProperty(exports, "SocketState", { enumerable: true, get: function () { return enum_1.SocketState; } });
+var whatsapp_1 = require("./api/whatsapp");
+Object.defineProperty(exports, "Whatsapp", { enumerable: true, get: function () { return whatsapp_1.Whatsapp; } });
+var initializer_1 = require("./controllers/initializer");
+Object.defineProperty(exports, "create", { enumerable: true, get: function () { return initializer_1.create; } });
+//# sourceMappingURL=index.js.map
